@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="GBK"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_1.xsd" version="2.1">
+	<tlib-version>1.0</tlib-version><!-- 表示此标签库的版本-->
+	<short-name>firsttag</short-name>
+	<tag>	<!--表示标签库中的每一个标签-->
+		<name>hello</name>	<!--表示在JSP中使用的名称-->
+		<tag-class>	<!--自定义标签类的  包名.类名-->
+			cmy.jspdemo.tagdemo.HelloTag
+		</tag-class>
+		<body-content>empty</body-content>	<!--表示该标签的标签体内容为空-->
+	</tag>
+	<tag>
+		<name>date</name>
+		<tag-class>
+			cmy.tagdemo.DateTag
+		</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>format</name><!--标签参数名（属性名） -->
+			<required>true</required><!-- true表示使用该标签时必须要给format属性赋值 -->
+			<rtexprvalue>true</rtexprvalue><!-- true表示属性可以由表达式(EL或<%=%>)来赋值 -->
+		</attribute>
+	</tag>
+	<tag>
+		<name>findAttribute</name>
+		<tag-class>cmy.jspdemo.tagdemo.AttributeTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>scope</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>iterator</name>
+		<tag-class>cmy.jspdemo.tagdemo.IteratorTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>each</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>scope</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+</taglib>    <!--TLD文件的根元素，其内部可以定义多个<tag>元素-->
